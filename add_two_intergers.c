@@ -9,7 +9,7 @@ int main() {
     int length_b = strlen(b);
     int length_sum;
     // so sánh độ dài xâu a và b để xác định độ dài xâu sum
-    length_sum = (length_a > length_b) ? length_a + 1 : length_b + 1;
+    length_sum = (length_a > length_b) ? length_a : length_b;
     
     // biến tổng dùng để tính tổng hai chữ số trong mỗi vòng lặp, biến nhớ dùng để lưu trữ phần dư(nếu tổng > 10)
     int tong , so_nho = 0;
@@ -36,13 +36,16 @@ int main() {
         sum[length_sum - i - 1] = tong + '0';
     }
     //kiểm tra lại phép tính cuối cùng xem còn số nhớ không
-    if (so_nho > 0) {  
+    if (so_nho > 0) {
+        for (int i = length_sum; i > 0; i--) {
+            sum[i] = sum[i - 1];
+        }
         sum[0] = so_nho + '0';
-        printf("%s\n",sum);
+        length_sum++;
     }
-    else {
-        printf("%s\n",sum);
-    }
+
+    sum[length_sum] = '\0';
+    printf("%s\n", sum);
     
     return 0;
 }
