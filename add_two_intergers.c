@@ -9,12 +9,8 @@ int main() {
     int length_b = strlen(b);
     int length_sum;
     // so sánh độ dài xâu a và b để xác định độ dài xâu sum
-    if (length_a > length_b) {
-        length_sum = length_a;  
-    }
-    else {
-        length_sum = length_b;
-    }
+    int  t = 0;
+    
     // biến tổng dùng để tính tổng hai chữ số trong mỗi vòng lặp, biến nhớ dùng để lưu trữ phần dư(nếu tổng > 10)
     int tong , so_nho = 0;
     for (int i = 0; i < length_sum; i++) {
